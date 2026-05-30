@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emma & Liam Wedding</title>
+  <title>Solera Café</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* =========================
@@ -20,9 +20,9 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #fffaf7;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: #f7f3ee;
+      color: #2b2b2b;
     }
 
     h1, h2, h3 {
@@ -31,6 +31,41 @@
 
     a {
       text-decoration: none;
+      color: inherit;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #b07d4f;
+    }
+
+    nav a {
+      margin: 0 12px;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #b07d4f;
     }
 
     /* =========================
@@ -38,8 +73,8 @@
     ========================== */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-      url('https://images.unsplash.com/photo-1523438097201-512ae7d59c3a?auto=format&fit=crop&w=1600&q=80')
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80')
       center/cover no-repeat;
 
       display: flex;
@@ -51,137 +86,98 @@
     }
 
     .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 10px;
+      font-size: 3.5rem;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
+      margin-top: 10px;
+      font-size: 1.1rem;
       max-width: 600px;
-      margin-inline: auto;
     }
 
     .btn {
       display: inline-block;
+      margin-top: 20px;
       padding: 12px 28px;
-      background: #d4a373;
+      background: #b07d4f;
       color: white;
       border-radius: 30px;
       transition: 0.3s;
-      font-weight: 500;
     }
 
     .btn:hover {
-      background: #b07d4f;
+      background: #8c6239;
       transform: translateY(-3px);
     }
 
     /* =========================
-       ABOUT
+       SECTIONS
     ========================== */
-    .about {
-      padding: 90px 20px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .about h2 {
-      font-size: 2.6rem;
-      margin-bottom: 15px;
-    }
-
-    .about p {
-      color: #555;
-      font-size: 1.05rem;
-      line-height: 1.8;
-    }
-
-    /* =========================
-       FEATURES
-    ========================== */
-    .features {
-      background: #fff;
-      padding: 80px 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+    section {
+      padding: 100px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
-    .card {
-      background: #fffaf7;
-      padding: 30px;
-      border-radius: 16px;
+    .section-title {
       text-align: center;
-      border: 1px solid #f0e6e0;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    /* =========================
+       MENU GRID
+    ========================== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transform: translateY(-8px);
     }
 
     .card h3 {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      float: right;
+      color: #b07d4f;
+      font-weight: 600;
+    }
+
+    .desc {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 8px;
     }
 
     /* =========================
-       GALLERY
+       OUR STORY
     ========================== */
-    .gallery {
-      padding: 90px 20px;
+    .story {
+      background: #fff;
       text-align: center;
+      border-radius: 20px;
+      padding: 60px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
-    .gallery h2 {
-      font-size: 2.6rem;
-      margin-bottom: 40px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      max-width: 1100px;
+    .story p {
+      max-width: 800px;
       margin: auto;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 16px;
-      transition: 0.3s;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
-
-    /* =========================
-       CONTACT
-    ========================== */
-    .contact {
-      padding: 90px 20px;
-      text-align: center;
-      background: #fdf6f0;
-    }
-
-    .contact h2 {
-      font-size: 2.6rem;
-      margin-bottom: 15px;
-    }
-
-    .contact p {
       color: #555;
-      margin-bottom: 25px;
+      line-height: 1.8;
     }
 
     /* =========================
@@ -189,7 +185,7 @@
     ========================== */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       background: #fff;
       color: #777;
       font-size: 0.9rem;
@@ -199,8 +195,12 @@
        RESPONSIVE
     ========================== */
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+
       .hero h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
       }
     }
   </style>
@@ -208,70 +208,103 @@
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+  <header>
+    <div class="logo">☕ Solera Café</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#coffee">Coffee & Tea</a>
+      <a href="#food">Food & Pastries</a>
+      <a href="#story">Our Story</a>
+    </nav>
+  </header>
+
+  <!-- =========================
+       HERO / HOME
+  ========================== -->
+  <section class="hero" id="home">
     <div>
-      <h1>Emma & Liam</h1>
-      <p>Two hearts. One love story. Join us as we begin forever together.</p>
-      <a href="#contact" class="btn">RSVP Now</a>
+      <h1>Welcome to Solera Café</h1>
+      <p>Where every cup tells a story and every bite feels like home.</p>
+      <a href="#coffee" class="btn">Explore Menu</a>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <h2>Our Story</h2>
-    <p>
-      From a simple moment to a lifetime promise — our journey has been filled with laughter,
-      love, and unforgettable memories. We are excited to celebrate our wedding with you.
-    </p>
-  </section>
+  <!-- =========================
+       COFFEE & TEA
+  ========================== -->
+  <section id="coffee">
+    <h2 class="section-title">Coffee & Tea</h2>
 
-  <!-- FEATURES -->
-  <section class="features">
     <div class="grid">
 
       <div class="card">
-        <h3>📅 Date</h3>
-        <p>June 20, 2026</p>
+        <h3>Espresso <span class="price">$3.5</span></h3>
+        <p class="desc">Strong and bold coffee shot.</p>
       </div>
 
       <div class="card">
-        <h3>📍 Venue</h3>
-        <p>Elegant Garden, Armenia</p>
+        <h3>Cappuccino <span class="price">$4.5</span></h3>
+        <p class="desc">Coffee with creamy milk foam.</p>
       </div>
 
       <div class="card">
-        <h3>💌 Invitation</h3>
-        <p>We warmly invite you to our special day</p>
+        <h3>Green Tea <span class="price">$3.0</span></h3>
+        <p class="desc">Fresh and calming herbal tea.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="gallery">
-    <h2>Memories of Love</h2>
+  <!-- =========================
+       FOOD & PASTRIES
+  ========================== -->
+  <section id="food">
+    <h2 class="section-title">Food & Pastries</h2>
 
-    <div class="gallery-grid">
+    <div class="grid">
 
-      <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80">
-      <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80">
+      <div class="card">
+        <h3>Croissant <span class="price">$3.0</span></h3>
+        <p class="desc">Buttery flaky French pastry.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cheesecake <span class="price">$6.0</span></h3>
+        <p class="desc">Creamy classic dessert slice.</p>
+      </div>
+
+      <div class="card">
+        <h3>Chocolate Muffin <span class="price">$3.5</span></h3>
+        <p class="desc">Soft rich chocolate muffin.</p>
+      </div>
 
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <h2>Join Our Celebration</h2>
-    <p>Please confirm your attendance and celebrate this beautiful moment with us</p>
-    <a class="btn" href="#">Send RSVP</a>
+  <!-- =========================
+       OUR STORY
+  ========================== -->
+  <section id="story">
+    <h2 class="section-title">Our Story</h2>
+
+    <div class="story">
+      <p>
+        Solera Café started with a simple dream — to create a warm space where people can slow down,
+        enjoy handcrafted coffee, and feel at home. Every cup we serve is made with care, passion,
+        and a love for quality. We believe café moments are not just about drinks — they are about connection,
+        comfort, and inspiration.
+      </p>
+    </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer>
-    © 2026 Emma & Liam Wedding. Made with love 💛
+    © 2026 Solera Café. Crafted with passion ☕
   </footer>
 
 </body>
