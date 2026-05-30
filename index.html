@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Wedding Landing Page</title>
 
   <!-- Google Fonts -->
@@ -41,7 +40,8 @@
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                  url('https://images.unsplash.com/photo-1523438097201-512ae7d59c3a') center/cover no-repeat;
+                  url('https://images.unsplash.com/photo-1523438097201-512ae7d59c3a?auto=format&fit=crop&w=1600&q=80')
+                  center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,6 +58,7 @@
     .hero-content p {
       font-size: 1.2rem;
       margin-bottom: 25px;
+      max-width: 600px;
     }
 
     .btn {
@@ -79,7 +80,7 @@
        ABOUT SECTION
     ========================== */
     .about {
-      padding: 80px 20px;
+      padding: 90px 20px;
       text-align: center;
       max-width: 900px;
       margin: auto;
@@ -91,8 +92,8 @@
     }
 
     .about p {
-      font-size: 1rem;
       color: #555;
+      font-size: 1.05rem;
     }
 
     /* =========================
@@ -105,8 +106,8 @@
 
     .features-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
       max-width: 1100px;
       margin: auto;
     }
@@ -116,31 +117,32 @@
       padding: 30px;
       border-radius: 15px;
       text-align: center;
-      transition: 0.3s ease;
       border: 1px solid #f0e6e0;
+      transition: 0.3s ease;
     }
 
     .feature-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
 
     .feature-box h3 {
       margin-bottom: 10px;
+      font-size: 1.2rem;
     }
 
     /* =========================
        CONTACT SECTION
     ========================== */
     .contact {
-      padding: 80px 20px;
+      padding: 90px 20px;
       text-align: center;
       background: #fdf6f0;
     }
 
     .contact h2 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .contact p {
@@ -154,9 +156,9 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #fff;
       font-size: 0.9rem;
       color: #777;
+      background: #fff;
     }
 
     /* =========================
@@ -164,7 +166,7 @@
     ========================== */
     @media (max-width: 768px) {
       .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
       }
 
       .hero-content p {
@@ -182,7 +184,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Emma & Liam</h1>
-      <p>We are getting married — and you are invited to celebrate our special day</p>
+      <p>We are getting married and would love you to celebrate this special moment with us</p>
       <a href="#contact" class="btn">RSVP Now</a>
     </div>
   </section>
@@ -193,8 +195,8 @@
   <section class="about">
     <h2>Our Love Story</h2>
     <p>
-      From the moment we met, life became more beautiful. This website is a small glimpse into our journey,
-      and we are excited to share our wedding day with you, surrounded by love, joy, and unforgettable memories.
+      What started as a simple meeting turned into a beautiful journey of love, trust, and unforgettable memories.
+      We are excited to begin a new chapter together and share our wedding day with the people we love most.
     </p>
   </section>
 
@@ -202,32 +204,36 @@
        FEATURES SECTION
   ========================== -->
   <section class="features">
+
     <div class="features-container">
 
+      <!-- Feature 1 -->
       <div class="feature-box">
         <h3>📅 Wedding Date</h3>
         <p>June 20, 2026</p>
       </div>
 
+      <!-- Feature 2 -->
       <div class="feature-box">
-        <h3>📍 Location</h3>
-        <p>Armenia, Elegant Garden Venue</p>
+        <h3>📍 Venue</h3>
+        <p>Elegant Garden, Armenia</p>
       </div>
 
+      <!-- Feature 3 -->
       <div class="feature-box">
         <h3>💌 Invitation</h3>
-        <p>We warmly invite you to celebrate with us</p>
+        <p>You are warmly invited to celebrate with us</p>
       </div>
 
     </div>
   </section>
 
   <!-- =========================
-       CONTACT / CTA SECTION
+       CONTACT SECTION
   ========================== -->
   <section class="contact" id="contact">
     <h2>Join Our Celebration</h2>
-    <p>Please confirm your attendance and share this special moment with us</p>
+    <p>Please confirm your attendance and be part of our special day</p>
     <a href="#" class="btn">Send RSVP</a>
   </section>
 
@@ -235,7 +241,7 @@
        FOOTER
   ========================== -->
   <footer>
-    © 2026 Emma & Liam Wedding. All love reserved 💛
+    © 2026 Wedding Landing Page. Made with love 💛
   </footer>
 
 </body>
