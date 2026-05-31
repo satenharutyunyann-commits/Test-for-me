@@ -3,14 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Café Menu Generator</title>
+<title>Wedding Brochure</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   GLOBAL
-========================= */
 *{
   margin:0;
   padding:0;
@@ -20,56 +17,24 @@
 
 body{
   font-family:'Inter', sans-serif;
-  background:#0b0c10;
-  color:#fff;
+  background:#fffaf7;
+  color:#333;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  left:0;
-  padding:18px 50px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(10,10,12,0.8);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  z-index:1000;
-}
-
-.logo{
-  font-family:'Playfair Display', serif;
-  color:#d4a373;
-  font-size:1.6rem;
-}
-
-nav a{
-  margin:0 12px;
-  color:#ccc;
-  transition:0.3s;
-}
-
-nav a:hover{ color:#d4a373; }
-
-/* =========================
-   HERO (AI CONCEPT)
-========================= */
+/* HERO */
 .hero{
   height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1523438097201-512ae7d59c3a?auto=format&fit=crop&w=1600&q=80')
+  center/cover no-repeat;
+
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+  color:white;
   padding:20px;
-  background:
-  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
-  url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1600&q=80')
-  center/cover no-repeat;
 }
 
 .hero h1{
@@ -79,76 +44,25 @@ nav a:hover{ color:#d4a373; }
 
 .hero p{
   margin-top:10px;
-  color:#cfcfcf;
-  max-width:650px;
-  margin-inline:auto;
-}
-
-.badge{
-  display:inline-block;
-  margin-top:15px;
-  padding:6px 14px;
-  background:rgba(212,163,115,0.15);
-  border:1px solid #d4a373;
-  color:#d4a373;
-  border-radius:20px;
-  font-size:0.85rem;
-}
-
-/* =========================
-   AI INPUT BOX (FAKE UI)
-========================= */
-.ai-box{
-  margin-top:30px;
-  display:flex;
-  justify-content:center;
-}
-
-.ai-input{
-  width:70%;
+  font-size:1.2rem;
   max-width:600px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  padding:14px 18px;
-  border-radius:30px;
-  color:#fff;
-  font-size:0.95rem;
 }
 
-.ai-btn{
-  margin-left:10px;
-  padding:14px 22px;
-  background:#d4a373;
-  border-radius:30px;
-  color:#111;
-  font-weight:600;
-}
-
-/* =========================
-   SECTION
-========================= */
+/* SECTION */
 section{
-  padding:120px 50px;
+  padding:100px 50px;
   max-width:1200px;
   margin:auto;
 }
 
 .title{
   text-align:center;
-  font-size:2.6rem;
-  font-family:'Playfair Display', serif;
-  margin-bottom:10px;
-}
-
-.subtitle{
-  text-align:center;
-  color:#aaa;
+  font-size:2.5rem;
   margin-bottom:50px;
+  font-family:'Playfair Display', serif;
 }
 
-/* =========================
-   GRID
-========================= */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -157,52 +71,44 @@ section{
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
   border-radius:18px;
   overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
   transition:0.3s;
+  background:#fff;
 }
 
 .card:hover{
-  transform:translateY(-12px);
-  border-color:#d4a373;
+  transform:translateY(-10px);
 }
 
 .card img{
   width:100%;
-  height:180px;
+  height:300px;
   object-fit:cover;
 }
 
 .card-content{
-  padding:18px;
+  padding:15px;
+  text-align:center;
 }
 
 .card h3{
-  display:flex;
-  justify-content:space-between;
+  font-family:'Playfair Display', serif;
+  margin-bottom:5px;
 }
 
-.price{
-  color:#d4a373;
+/* COUPLE SECTION */
+.couple{
+  background:#fff;
+  text-align:center;
 }
 
-.desc{
-  margin-top:8px;
-  color:#bbb;
-  font-size:0.9rem;
-}
-
-/* AI TAG */
-.ai-tag{
-  display:inline-block;
-  margin-top:10px;
-  font-size:0.75rem;
-  color:#d4a373;
-  border:1px solid #d4a373;
-  padding:4px 10px;
+.couple img{
+  width:100%;
+  max-width:600px;
   border-radius:20px;
+  margin-top:20px;
 }
 
 /* FOOTER */
@@ -210,109 +116,106 @@ footer{
   text-align:center;
   padding:30px;
   color:#777;
-  border-top:1px solid rgba(255,255,255,0.08);
+  background:#fff;
+  border-top:1px solid #eee;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  header{flex-direction:column;}
   .hero h1{font-size:2.8rem;}
-  .ai-input{width:100%;}
+  section{padding:80px 20px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<header>
-  <div class="logo">☕ SOLERA AI</div>
-  <nav>
-    <a href="#generator">AI Menu</a>
-    <a href="#results">Generated Menu</a>
-    <a href="#concept">Concept</a>
-  </nav>
-</header>
-
 <!-- HERO -->
-<section class="hero" id="generator">
+<section class="hero">
   <div>
-    <h1>AI Café Menu Generator</h1>
-    <p>Generate a personalized café menu instantly based on taste, mood, and preferences.</p>
-
-    <span class="badge">✨ AI-Powered Concept UI (Frontend Demo)</span>
-
-    <!-- FAKE AI INPUT -->
-    <div class="ai-box">
-      <input class="ai-input" placeholder="e.g. Create a luxury coffee menu with chocolate desserts...">
-      <div class="ai-btn">Generate</div>
-    </div>
+    <h1>Emma & Liam</h1>
+    <p>A love story written in destiny — celebrating forever together</p>
   </div>
 </section>
 
-<!-- GENERATED MENU -->
-<section id="results">
-  <div class="title">AI Generated Menu</div>
-  <div class="subtitle">Personalized selections based on user taste profile</div>
+<!-- COUPLE INTRO -->
+<section class="couple">
+  <div class="title">The Couple</div>
+
+  <!-- Replace images with your real photos -->
+  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1200&q=80" alt="Bride & Groom">
+
+  <p style="margin-top:20px; max-width:800px; margin-inline:auto; color:#555;">
+    Two hearts, one journey. Emma and Liam’s story began with a simple meeting and grew into a lifetime promise.
+  </p>
+</section>
+
+<!-- BRIDE -->
+<section>
+  <div class="title">The Bride</div>
 
   <div class="grid">
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Velvet Espresso <span class="price">$4.0</span></h3>
-        <p class="desc">AI recommendation: bold & smooth coffee profile.</p>
-        <div class="ai-tag">AI MATCH</div>
+        <h3>Elegant Bride</h3>
+        <p>Graceful, loving, and full of light.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Caramel Cappuccino <span class="price">$4.8</span></h3>
-        <p class="desc">Perfect balance of sweetness and espresso.</p>
-        <div class="ai-tag">TOP PICK</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80">
-      <div class="card-content">
-        <h3>Luxury Croissant <span class="price">$3.5</span></h3>
-        <p class="desc">Fresh baked pastry suggested by AI.</p>
-        <div class="ai-tag">AI MATCH</div>
+        <h3>Bridal Portrait</h3>
+        <p>A moment captured in timeless beauty.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- CONCEPT -->
-<section id="concept">
-  <div class="title">How It Works</div>
-  <div class="subtitle">Future café ordering experience powered by AI</div>
+<!-- GROOM -->
+<section>
+  <div class="title">The Groom</div>
 
   <div class="grid">
 
     <div class="card">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>1. Input Preferences</h3>
-        <p class="desc">User enters taste, mood, dietary needs.</p>
+        <h3>Elegant Groom</h3>
+        <p>Strong, kind, and deeply devoted.</p>
       </div>
     </div>
 
     <div class="card">
+      <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>2. AI Analysis</h3>
-        <p class="desc">System analyzes flavor profiles & behavior.</p>
+        <h3>Groom Portrait</h3>
+        <p>A confident moment before forever.</p>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="title">Wedding Gallery</div>
+
+  <div class="grid">
+
     <div class="card">
-      <div class="card-content">
-        <h3>3. Generate Menu</h3>
-        <p class="desc">Personalized café menu is created instantly.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1523438097201-512ae7d59c3a?auto=format&fit=crop&w=800&q=80">
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80">
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=800&q=80">
     </div>
 
   </div>
@@ -320,7 +223,7 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Solera AI Café • Future of Digital Dining ☕
+  © 2026 Emma & Liam Wedding Brochure • Made with love 💛
 </footer>
 
 </body>
