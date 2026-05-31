@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solera Luxury Café</title>
+<title>AI Café Menu Generator</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* =========================
+   GLOBAL
+========================= */
 *{
   margin:0;
   padding:0;
@@ -17,11 +20,13 @@
 
 body{
   font-family:'Inter', sans-serif;
-  background:#0b0b0d;
+  background:#0b0c10;
   color:#fff;
 }
 
-/* NAV */
+/* =========================
+   NAVBAR
+========================= */
 header{
   position:fixed;
   width:100%;
@@ -41,64 +46,87 @@ header{
   font-family:'Playfair Display', serif;
   color:#d4a373;
   font-size:1.6rem;
-  letter-spacing:1px;
 }
 
 nav a{
   margin:0 12px;
-  color:#cfcfcf;
-  font-size:0.95rem;
+  color:#ccc;
   transition:0.3s;
 }
 
-nav a:hover{
-  color:#d4a373;
-}
+nav a:hover{ color:#d4a373; }
 
-/* HERO */
+/* =========================
+   HERO (AI CONCEPT)
+========================= */
 .hero{
   height:100vh;
-  background:
-  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.75)),
-  url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80')
-  center/cover no-repeat;
-
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
   padding:20px;
+  background:
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+  url('https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1600&q=80')
+  center/cover no-repeat;
 }
 
 .hero h1{
-  font-size:4.2rem;
+  font-size:4rem;
   font-family:'Playfair Display', serif;
 }
 
 .hero p{
   margin-top:10px;
-  color:#c9c9c9;
+  color:#cfcfcf;
   max-width:650px;
   margin-inline:auto;
 }
 
-.btn{
+.badge{
   display:inline-block;
-  margin-top:22px;
-  padding:13px 30px;
-  background:#d4a373;
-  color:#111;
+  margin-top:15px;
+  padding:6px 14px;
+  background:rgba(212,163,115,0.15);
+  border:1px solid #d4a373;
+  color:#d4a373;
+  border-radius:20px;
+  font-size:0.85rem;
+}
+
+/* =========================
+   AI INPUT BOX (FAKE UI)
+========================= */
+.ai-box{
+  margin-top:30px;
+  display:flex;
+  justify-content:center;
+}
+
+.ai-input{
+  width:70%;
+  max-width:600px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:14px 18px;
   border-radius:30px;
+  color:#fff;
+  font-size:0.95rem;
+}
+
+.ai-btn{
+  margin-left:10px;
+  padding:14px 22px;
+  background:#d4a373;
+  border-radius:30px;
+  color:#111;
   font-weight:600;
-  transition:0.3s;
 }
 
-.btn:hover{
-  background:#b88757;
-  transform:translateY(-3px);
-}
-
-/* SECTION */
+/* =========================
+   SECTION
+========================= */
 section{
   padding:120px 50px;
   max-width:1200px;
@@ -108,19 +136,19 @@ section{
 .title{
   text-align:center;
   font-size:2.6rem;
-  margin-bottom:50px;
   font-family:'Playfair Display', serif;
+  margin-bottom:10px;
 }
 
-/* SUBTITLE COLLECTION */
 .subtitle{
   text-align:center;
   color:#aaa;
-  margin-bottom:30px;
-  font-size:0.95rem;
+  margin-bottom:50px;
 }
 
-/* GRID */
+/* =========================
+   GRID
+========================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -154,19 +182,27 @@ section{
 .card h3{
   display:flex;
   justify-content:space-between;
-  font-size:1.05rem;
 }
 
 .price{
   color:#d4a373;
-  font-weight:600;
 }
 
 .desc{
   margin-top:8px;
-  color:#bdbdbd;
+  color:#bbb;
   font-size:0.9rem;
-  line-height:1.4;
+}
+
+/* AI TAG */
+.ai-tag{
+  display:inline-block;
+  margin-top:10px;
+  font-size:0.75rem;
+  color:#d4a373;
+  border:1px solid #d4a373;
+  padding:4px 10px;
+  border-radius:20px;
 }
 
 /* FOOTER */
@@ -179,8 +215,9 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  header{flex-direction:column; gap:10px;}
+  header{flex-direction:column;}
   .hero h1{font-size:2.8rem;}
+  .ai-input{width:100%;}
 }
 </style>
 </head>
@@ -189,162 +226,92 @@ footer{
 
 <!-- NAV -->
 <header>
-  <div class="logo">☕ SOLERA LUXE</div>
+  <div class="logo">☕ SOLERA AI</div>
   <nav>
-    <a href="#coffee">Coffee</a>
-    <a href="#tea">Tea</a>
-    <a href="#pastries">Pastries</a>
-    <a href="#food">Food</a>
+    <a href="#generator">AI Menu</a>
+    <a href="#results">Generated Menu</a>
+    <a href="#concept">Concept</a>
   </nav>
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="generator">
   <div>
-    <h1>Luxury Café Experience</h1>
-    <p>Where craftsmanship meets flavor — premium coffee, artisan pastries & gourmet dining.</p>
-    <a href="#coffee" class="btn">Explore Collections</a>
+    <h1>AI Café Menu Generator</h1>
+    <p>Generate a personalized café menu instantly based on taste, mood, and preferences.</p>
+
+    <span class="badge">✨ AI-Powered Concept UI (Frontend Demo)</span>
+
+    <!-- FAKE AI INPUT -->
+    <div class="ai-box">
+      <input class="ai-input" placeholder="e.g. Create a luxury coffee menu with chocolate desserts...">
+      <div class="ai-btn">Generate</div>
+    </div>
   </div>
 </section>
 
-<!-- COFFEE COLLECTION -->
-<section id="coffee">
-  <div class="title">Coffee Collection</div>
-  <div class="subtitle">Signature espresso-based creations</div>
+<!-- GENERATED MENU -->
+<section id="results">
+  <div class="title">AI Generated Menu</div>
+  <div class="subtitle">Personalized selections based on user taste profile</div>
 
   <div class="grid">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Espresso Noir <span class="price">$3.5</span></h3>
-        <p class="desc">Deep roasted premium espresso shot.</p>
+        <h3>Velvet Espresso <span class="price">$4.0</span></h3>
+        <p class="desc">AI recommendation: bold & smooth coffee profile.</p>
+        <div class="ai-tag">AI MATCH</div>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Velvet Cappuccino <span class="price">$4.8</span></h3>
-        <p class="desc">Silky milk foam with rich espresso.</p>
+        <h3>Caramel Cappuccino <span class="price">$4.8</span></h3>
+        <p class="desc">Perfect balance of sweetness and espresso.</p>
+        <div class="ai-tag">TOP PICK</div>
       </div>
     </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80">
-      <div class="card-content">
-        <h3>Golden Latte <span class="price">$5.2</span></h3>
-        <p class="desc">Smooth latte with golden milk blend.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80">
-      <div class="card-content">
-        <h3>Dark Mocha <span class="price">$5.5</span></h3>
-        <p class="desc">Chocolate-infused espresso indulgence.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- TEA COLLECTION -->
-<section id="tea">
-  <div class="title">Tea Collection</div>
-  <div class="subtitle">Herbal, floral & wellness blends</div>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80">
-      <div class="card-content">
-        <h3>Emerald Green <span class="price">$3.2</span></h3>
-        <p class="desc">Pure antioxidant green tea leaves.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?auto=format&fit=crop&w=800&q=80">
-      <div class="card-content">
-        <h3>Royal Black Tea <span class="price">$3.0</span></h3>
-        <p class="desc">Strong traditional black tea blend.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80">
-      <div class="card-content">
-        <h3>Chamomile Bloom <span class="price">$3.5</span></h3>
-        <p class="desc">Relaxing herbal floral infusion.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PASTRIES COLLECTION -->
-<section id="pastries">
-  <div class="title">Artisan Pastries</div>
-  <div class="subtitle">Fresh baked luxury desserts</div>
-
-  <div class="grid">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Butter Croissant <span class="price">$3.2</span></h3>
-        <p class="desc">French-style flaky perfection.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80">
-      <div class="card-content">
-        <h3>Vanilla Cheesecake <span class="price">$6.5</span></h3>
-        <p class="desc">Creamy luxury dessert slice.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80">
-      <div class="card-content">
-        <h3>Chocolate Velvet Muffin <span class="price">$4.0</span></h3>
-        <p class="desc">Rich soft cocoa delight.</p>
+        <h3>Luxury Croissant <span class="price">$3.5</span></h3>
+        <p class="desc">Fresh baked pastry suggested by AI.</p>
+        <div class="ai-tag">AI MATCH</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- FOOD COLLECTION -->
-<section id="food">
-  <div class="title">Gourmet Food</div>
-  <div class="subtitle">Chef-inspired breakfast & meals</div>
+<!-- CONCEPT -->
+<section id="concept">
+  <div class="title">How It Works</div>
+  <div class="subtitle">Future café ordering experience powered by AI</div>
 
   <div class="grid">
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Luxury Breakfast <span class="price">$9.5</span></h3>
-        <p class="desc">Eggs, toast & premium sides.</p>
+        <h3>1. Input Preferences</h3>
+        <p class="desc">User enters taste, mood, dietary needs.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Avocado Deluxe <span class="price">$8.0</span></h3>
-        <p class="desc">Fresh gourmet avocado toast.</p>
+        <h3>2. AI Analysis</h3>
+        <p class="desc">System analyzes flavor profiles & behavior.</p>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Signature Club <span class="price">$7.5</span></h3>
-        <p class="desc">Triple-layer artisan sandwich.</p>
+        <h3>3. Generate Menu</h3>
+        <p class="desc">Personalized café menu is created instantly.</p>
       </div>
     </div>
 
@@ -353,7 +320,7 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Solera Luxe Café • Crafted for premium taste ☕
+  © 2026 Solera AI Café • Future of Digital Dining ☕
 </footer>
 
 </body>
