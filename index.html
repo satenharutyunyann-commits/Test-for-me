@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Solera Premium Café Menu</title>
+<title>Solera Luxury Café</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -17,7 +17,7 @@
 
 body{
   font-family:'Inter', sans-serif;
-  background:#0f0f10;
+  background:#0b0b0d;
   color:#fff;
 }
 
@@ -31,8 +31,8 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(15,15,16,0.75);
-  backdrop-filter:blur(10px);
+  background:rgba(10,10,12,0.8);
+  backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(255,255,255,0.08);
   z-index:1000;
 }
@@ -40,22 +40,26 @@ header{
 .logo{
   font-family:'Playfair Display', serif;
   color:#d4a373;
-  font-size:1.5rem;
+  font-size:1.6rem;
+  letter-spacing:1px;
 }
 
 nav a{
   margin:0 12px;
-  color:#ccc;
+  color:#cfcfcf;
+  font-size:0.95rem;
   transition:0.3s;
 }
 
-nav a:hover{ color:#d4a373; }
+nav a:hover{
+  color:#d4a373;
+}
 
 /* HERO */
 .hero{
   height:100vh;
   background:
-  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.75)),
   url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80')
   center/cover no-repeat;
 
@@ -67,28 +71,34 @@ nav a:hover{ color:#d4a373; }
 }
 
 .hero h1{
-  font-size:4rem;
+  font-size:4.2rem;
   font-family:'Playfair Display', serif;
 }
 
 .hero p{
   margin-top:10px;
-  color:#ccc;
-  max-width:600px;
+  color:#c9c9c9;
+  max-width:650px;
+  margin-inline:auto;
 }
 
-/* BUTTON */
 .btn{
   display:inline-block;
-  margin-top:20px;
-  padding:12px 28px;
+  margin-top:22px;
+  padding:13px 30px;
   background:#d4a373;
   color:#111;
   border-radius:30px;
   font-weight:600;
+  transition:0.3s;
 }
 
-/* SECTIONS */
+.btn:hover{
+  background:#b88757;
+  transform:translateY(-3px);
+}
+
+/* SECTION */
 section{
   padding:120px 50px;
   max-width:1200px;
@@ -97,9 +107,17 @@ section{
 
 .title{
   text-align:center;
-  font-size:2.4rem;
+  font-size:2.6rem;
   margin-bottom:50px;
   font-family:'Playfair Display', serif;
+}
+
+/* SUBTITLE COLLECTION */
+.subtitle{
+  text-align:center;
+  color:#aaa;
+  margin-bottom:30px;
+  font-size:0.95rem;
 }
 
 /* GRID */
@@ -111,7 +129,7 @@ section{
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.05);
+  background:rgba(255,255,255,0.04);
   border:1px solid rgba(255,255,255,0.08);
   border-radius:18px;
   overflow:hidden;
@@ -119,7 +137,7 @@ section{
 }
 
 .card:hover{
-  transform:translateY(-10px);
+  transform:translateY(-12px);
   border-color:#d4a373;
 }
 
@@ -136,6 +154,7 @@ section{
 .card h3{
   display:flex;
   justify-content:space-between;
+  font-size:1.05rem;
 }
 
 .price{
@@ -145,8 +164,9 @@ section{
 
 .desc{
   margin-top:8px;
-  color:#bbb;
+  color:#bdbdbd;
   font-size:0.9rem;
+  line-height:1.4;
 }
 
 /* FOOTER */
@@ -159,7 +179,7 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  header{flex-direction:column;}
+  header{flex-direction:column; gap:10px;}
   .hero h1{font-size:2.8rem;}
 }
 </style>
@@ -169,7 +189,7 @@ footer{
 
 <!-- NAV -->
 <header>
-  <div class="logo">☕ SOLERA</div>
+  <div class="logo">☕ SOLERA LUXE</div>
   <nav>
     <a href="#coffee">Coffee</a>
     <a href="#tea">Tea</a>
@@ -181,146 +201,150 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <div>
-    <h1>Premium Café Menu</h1>
-    <p>Handcrafted drinks, fresh pastries & gourmet food made with love.</p>
-    <a href="#coffee" class="btn">Explore Menu</a>
+    <h1>Luxury Café Experience</h1>
+    <p>Where craftsmanship meets flavor — premium coffee, artisan pastries & gourmet dining.</p>
+    <a href="#coffee" class="btn">Explore Collections</a>
   </div>
 </section>
 
-<!-- COFFEE -->
+<!-- COFFEE COLLECTION -->
 <section id="coffee">
-  <div class="title">Coffee Selection</div>
+  <div class="title">Coffee Collection</div>
+  <div class="subtitle">Signature espresso-based creations</div>
 
   <div class="grid">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Espresso <span class="price">$3.5</span></h3>
-        <p class="desc">Strong concentrated coffee shot.</p>
+        <h3>Espresso Noir <span class="price">$3.5</span></h3>
+        <p class="desc">Deep roasted premium espresso shot.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Cappuccino <span class="price">$4.5</span></h3>
-        <p class="desc">Espresso with creamy milk foam.</p>
+        <h3>Velvet Cappuccino <span class="price">$4.8</span></h3>
+        <p class="desc">Silky milk foam with rich espresso.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Latte <span class="price">$4.8</span></h3>
-        <p class="desc">Smooth espresso with steamed milk.</p>
+        <h3>Golden Latte <span class="price">$5.2</span></h3>
+        <p class="desc">Smooth latte with golden milk blend.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Mocha <span class="price">$5.2</span></h3>
-        <p class="desc">Coffee blended with rich chocolate.</p>
+        <h3>Dark Mocha <span class="price">$5.5</span></h3>
+        <p class="desc">Chocolate-infused espresso indulgence.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- TEA -->
+<!-- TEA COLLECTION -->
 <section id="tea">
   <div class="title">Tea Collection</div>
+  <div class="subtitle">Herbal, floral & wellness blends</div>
 
   <div class="grid">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Green Tea <span class="price">$3.0</span></h3>
-        <p class="desc">Fresh antioxidant-rich tea.</p>
+        <h3>Emerald Green <span class="price">$3.2</span></h3>
+        <p class="desc">Pure antioxidant green tea leaves.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1505577058444-a3dab90d4253?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Black Tea <span class="price">$2.8</span></h3>
-        <p class="desc">Strong and classic brewed tea.</p>
+        <h3>Royal Black Tea <span class="price">$3.0</span></h3>
+        <p class="desc">Strong traditional black tea blend.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Chamomile <span class="price">$3.2</span></h3>
-        <p class="desc">Relaxing herbal evening tea.</p>
+        <h3>Chamomile Bloom <span class="price">$3.5</span></h3>
+        <p class="desc">Relaxing herbal floral infusion.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- PASTRIES -->
+<!-- PASTRIES COLLECTION -->
 <section id="pastries">
-  <div class="title">Pastries</div>
+  <div class="title">Artisan Pastries</div>
+  <div class="subtitle">Fresh baked luxury desserts</div>
 
   <div class="grid">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Croissant <span class="price">$3.0</span></h3>
-        <p class="desc">Buttery and flaky pastry.</p>
+        <h3>Butter Croissant <span class="price">$3.2</span></h3>
+        <p class="desc">French-style flaky perfection.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Cheesecake <span class="price">$6.0</span></h3>
-        <p class="desc">Creamy classic dessert.</p>
+        <h3>Vanilla Cheesecake <span class="price">$6.5</span></h3>
+        <p class="desc">Creamy luxury dessert slice.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Chocolate Muffin <span class="price">$3.5</span></h3>
-        <p class="desc">Soft rich chocolate muffin.</p>
+        <h3>Chocolate Velvet Muffin <span class="price">$4.0</span></h3>
+        <p class="desc">Rich soft cocoa delight.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- FOOD -->
+<!-- FOOD COLLECTION -->
 <section id="food">
-  <div class="title">Food Menu</div>
+  <div class="title">Gourmet Food</div>
+  <div class="subtitle">Chef-inspired breakfast & meals</div>
 
   <div class="grid">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Breakfast Plate <span class="price">$8.5</span></h3>
-        <p class="desc">Eggs, toast & fresh sides.</p>
+        <h3>Luxury Breakfast <span class="price">$9.5</span></h3>
+        <p class="desc">Eggs, toast & premium sides.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Avocado Toast <span class="price">$7.0</span></h3>
-        <p class="desc">Healthy fresh avocado bread.</p>
+        <h3>Avocado Deluxe <span class="price">$8.0</span></h3>
+        <p class="desc">Fresh gourmet avocado toast.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80">
       <div class="card-content">
-        <h3>Club Sandwich <span class="price">$6.5</span></h3>
-        <p class="desc">Fresh layered sandwich meal.</p>
+        <h3>Signature Club <span class="price">$7.5</span></h3>
+        <p class="desc">Triple-layer artisan sandwich.</p>
       </div>
     </div>
 
@@ -329,7 +353,7 @@ footer{
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Solera Café • Premium Digital Experience ☕
+  © 2026 Solera Luxe Café • Crafted for premium taste ☕
 </footer>
 
 </body>
